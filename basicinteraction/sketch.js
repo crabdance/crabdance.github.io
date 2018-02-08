@@ -13,5 +13,5 @@ function mouseMoved(){
 function deviceShaken(){
     fill(random(0,255),random(0,255),random(0,255));
     noStroke();
-    ellipse(random(0,100),random(0,100),random(0,100),random(0,100));
+    ellipse(random(),random(),random(),random());
 }
