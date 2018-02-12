@@ -3,7 +3,10 @@ function setup() {
 }
 
 function draw() {
-  if (mouseX = width/2); {
-    ellipse(random(),random(),random(0,100),random(0,100));
+  if (mouseX < width/2); {
+    fill (random(255),random(255));
+    noStroke();
+    ellipse(random(0,1500),random(0,1500),random(0,100),random(0,100));
   }
+
 }
