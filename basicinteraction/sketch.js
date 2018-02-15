@@ -10,19 +10,19 @@ if (mouseIsPressed){
   rotateX(frameCount * 0.01);
   rotateY(frameCount * 0.01);
   rotateZ(frameCount * 0.01);
-  sphere(200,5,5);
+  sphere(140,5,5);
 } else {
   background(255,255,255);
   fill(0,0,255);
-  rotateX(frameCount * 0.01);
-  rotateY(frameCount * 0.01);
+  //rotateX(frameCount * 0.01);
+  //rotateY(frameCount * 0.01);
   rotateZ(frameCount * 0.01);
-  torus(200, 100, 20, 4);
+  torus(250, 100, 20, 4);
   fill(0,255,0);
   rotateX(frameCount * 0.01);
   rotateY(frameCount * 0.01);
   rotateZ(frameCount * 0.01);
-  sphere(200,5,5);
+  sphere(140,11,11);
   }
 }
 
