@@ -6,7 +6,9 @@ function setup() {
 function draw() {
 
   if (mouseIsPressed) {
-    fill(0, 255, 0);
+    background(255,255,255);
+
+    fill(255, 0, 0);
     rotateX(frameCount * 0.02);
     rotateY(frameCount * 0.02);
     rotateZ(frameCount * 0.02);
@@ -14,12 +16,11 @@ function draw() {
 
   } else {
     background(255, 255, 255);
+
     fill(0, 0, 255);
-    //rotateX(frameCount * 0.01);
-    //rotateY(frameCount * 0.01);
     rotateZ(frameCount * 0.01);
     torus(250, 100, 20, 4);
-    
+
     fill(0, 255, 0);
     rotateX(frameCount * 0.02);
     rotateY(frameCount * 0.02);
