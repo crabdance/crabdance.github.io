@@ -1,25 +1,27 @@
-let boxSize;
-let isFilled;
-function setup(){
-  createCanvas(600,600);
-  boxSize=width/8;
-  isFilled=false;
+// Dots Thing
+// Dan Schellenberg
+// Mar 5, 2018
+
+function setup() {
+  createCanvas(windowWidth, windowHeight);
+  noCursor();
 }
-function draw(){
-  background(255);
-  drawBoard();
+
+function draw() {
+  background(0);
+  displayDots();
 }
-function drawBoard(){
-  for(let i=0;i<8;i++){
-    for(let j=0;j<8;j++){
-      if(isFilled){
-        fill(0);
-      }else{
-        fill(255);
-      }
-      rect(boxSize*j,boxSize*i,boxSize,boxSize);
-      isFilled=!isFilled;
+
+function displayDots() {
+  let pointSpacing = 50;
+  for (let x = pointSpacing; x < width; x += pointSpacing) {
+    for (let y = pointSpacing; y < height; y += pointSpacing) {
+      fill(0, 60);
+      noStroke();
+      ellipse(x, y, 4, 4);
+      fill(255, 60);
+      stroke(255, 60);
+      line(x, y, mouseX, mouseY);
     }
-    isFilled=!isFilled;
   }
 }
