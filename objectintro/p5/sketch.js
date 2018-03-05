@@ -1,7 +1,19 @@
+let ball = {
+  x: 200,
+  y: 300,
+  radius: 50,
+};
+
 function setup() {
-  // put setup code here
+  createCanvas(windowWidth,windowHeight);
 }
 
 function draw() {
-  // put drawing code here
+  background(255);
+  fill(0);
+
+  ball.x = mouseX;
+  ball.y = mouseY;
+
+  ellipse(ball.x,ball.y,ball.radius,ball.radius);
 }
