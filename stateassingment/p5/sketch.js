@@ -27,7 +27,8 @@ function mousePressed() {
 }
 
 function globeShift() {
-  for (let a = 20; a < 300; a=a + 1){
+  if ( a < 300){
     sphere(a);
+    (a + 1);
   }
 }
