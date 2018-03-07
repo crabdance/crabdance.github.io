@@ -13,7 +13,7 @@ function draw() {
     controlGlobe();
   }
   if (state === 1) {
-    globeShift()
+    globeShift();
   }
 }
 
