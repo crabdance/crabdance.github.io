@@ -1,34 +1,21 @@
 let state = 0;
-let a;
 
-
-function setup() {
-  createCanvas(windowWidth, windowHeight, WEBGL);
-
+function setup(){
+  createCanvas(windowWidth,windowHeight);
 }
 
-function draw() {
-  background(255);
-  if (state === 0) {
-    controlGlobe();
+function draw(){
+  if (state === 0){
+    createStartMenu();
   }
-  if (state === 1) {
-    globeShift();
-  }
+
 }
 
-function controlGlobe() {
-  fill(255, 0, 0);
-  sphere(a);
+function createStartMenu(){
+  rect(width/2,height/2,20,20);
+  
 }
 
-function mousePressed() {
-  state = 1;
-}
+function createRandom(){
 
-function globeShift() {
-  if ( a < 300){
-    sphere(a);
-    (a + 1);
-  }
 }
