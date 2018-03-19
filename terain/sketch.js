@@ -1,4 +1,5 @@
 let heights = [];
+let numberOfRectangles = [];
 
 function setup() {
   createCanvas(windowWidth, windowHeight);
@@ -19,5 +20,11 @@ function generateInitialTerrain(numberOfRectangles) {
 }
 
 function displayTerrain() {
-
+  rectMode(CORNERS);
+  let rectWidth = width / numberOfRectangles;
+  rect(0, height, rectWidth, height - heights[0]);
+  fill(0);
+  for (let i = 0; i < numberOfRectangles; i++) {
+    rect(i * rectWidth, height, (i + 1) * rectWidth, height - heights[i]);
+  }
 }
