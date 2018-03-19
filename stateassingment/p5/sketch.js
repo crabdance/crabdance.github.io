@@ -19,11 +19,10 @@ function createStartMenu(){
 
 }
 
-function startSwitch(){
-  if mouseClicked(){
-    if (mouseX === width / 2 && mouseY ==== height / 2){
-      state = 1;
-    }
+function mouseClicked(){
+  if (mouseIsPressed &&
+    
+    state = 1;
   }
 }
 
