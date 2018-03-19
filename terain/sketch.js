@@ -1,8 +1,9 @@
 let heights = [];
-let numberOfRectangles = [];
+let numberOfRectangles;
 
 function setup() {
   createCanvas(windowWidth, windowHeight);
+  numberOfRectangles = 100;
   generateInitialTerrain(10);
 
 }
