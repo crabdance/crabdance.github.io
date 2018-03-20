@@ -18,6 +18,7 @@ function draw() {
 }
 
 function plantFlag() {
+  let rectWidth = width / numberOfRectangles;
   let heighestX;
   let tallest = 0;
   for (let i = 0; i < heights.length; i++) {
