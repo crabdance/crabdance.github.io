@@ -1,6 +1,8 @@
 let heights = [];
 let numberOfRectangles;
 
+
+
 function setup() {
   createCanvas(windowWidth, windowHeight);
   numberOfRectangles = 100;
