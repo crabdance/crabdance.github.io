@@ -1,8 +1,8 @@
 // grid demo
 
 
-let rows = 1000;
-let cols = 1000;
+let rows = 20;
+let cols = 20;
 let grid;
 let cellSize;
 
@@ -28,6 +28,17 @@ function displayGrid() {
       }
       rect(x * cellSize, y * cellSize, cellSize, cellSize);
     }
+  }
+}
+
+function mousePressed() {
+  let xcoord = floor(mouseX / cellSize);
+  let ycoord = floor(mouseY / cellSize);
+
+  if (grid[xcoord][ycoord] === 1) {
+    grid[xcoord][ycoord] = 0;
+  } else {
+    grid[xcoord][ycoord] = 1;
   }
 }
 
