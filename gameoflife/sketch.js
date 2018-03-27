@@ -1,8 +1,8 @@
 // game of life
 
 
-let rows = 30;
-let cols = 30;
+let rows = 50;
+let cols = 50;
 let grid;
 let cellSize;
 let autoPlay;
