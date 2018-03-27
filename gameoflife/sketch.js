@@ -84,7 +84,7 @@ function mousePressed() {
 function keyPressed() {
   if (key === "r" || key === "R") {
     grid = createRandom2dArray(cols, rows);
-  } else if (key === "a") {
+  } else if (key === " ") {
     nextTurn();
   }
 
@@ -107,13 +107,11 @@ function createRandom2dArray(cols, rows) {
 
 function createEmpty2dArray(cols, rows) {
   let randomGrid = [];
-  for (let x = 0; x < cols; x++) {
+  for (let x=0; x<cols; x++) {
     randomGrid.push([]);
-    for (let y = 0; y < rows; y++) {
-      if (random(100) < 50) {
-        randomGrid[x].push(0);
+    for (let y=0; y<rows; y++) {
+      randomGrid[x].push(0);
     }
   }
   return randomGrid;
-  }
 }
