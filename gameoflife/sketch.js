@@ -5,6 +5,7 @@ let rows = 30;
 let cols = 30;
 let grid;
 let cellSize;
+let autoPlay;
 
 
 function setup() {
@@ -20,6 +21,12 @@ function setup() {
 function draw() {
   background(255);
   displayGrid();
+}
+
+function autoPlayIfRequired() {
+  if (autoPlay && frameCount % 1 === 10) {
+    nextTurn();
+  }
 }
 
 function nextTurn() {
@@ -86,9 +93,13 @@ function keyPressed() {
     grid = createRandom2dArray(cols, rows);
   } else if (key === " ") {
     nextTurn();
+  } else {
+    if (key === "a" || key === "A"){
+      autoPlayIfRequired();
+    }
+  }
   }
 
-}
 
 function createRandom2dArray(cols, rows) {
   let randomGrid = [];
