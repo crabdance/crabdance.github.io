@@ -8,6 +8,7 @@ let cellSize;
 let autoPlay;
 
 
+
 function setup() {
   if (windowWidth > windowHeight) {
     createCanvas(windowHeight, windowHeight);
@@ -21,10 +22,12 @@ function setup() {
 function draw() {
   background(255);
   displayGrid();
+  frameRate(7);
+  autoPlayIfRequired();
 }
 
 function autoPlayIfRequired() {
-  if (autoPlay && frameCount % 1 === 10) {
+  if (autoPlay === 1) {
     nextTurn();
   }
 }
@@ -68,9 +71,9 @@ function displayGrid() {
   for (let x = 0; x < grid.length; x++) {
     for (let y = 0; y < grid[0].length; y++) {
       if (grid[x][y] === 0) {
-        fill(0);
-      } else {
         fill(255);
+      } else {
+        fill(0);
       }
       rect(x * cellSize, y * cellSize, cellSize, cellSize);
     }
@@ -91,14 +94,19 @@ function mousePressed() {
 function keyPressed() {
   if (key === "r" || key === "R") {
     grid = createRandom2dArray(cols, rows);
+    autoPlay = 0;
   } else if (key === " ") {
     nextTurn();
   } else {
     if (key === "a" || key === "A"){
-      autoPlayIfRequired();
+      autoPlay = 1;
+      }
     }
-  }
-  }
+    if (key === "s" || key === "S"){
+      autoPlay = 0;
+      }
+    }
+
 
 
 function createRandom2dArray(cols, rows) {
