@@ -1,14 +1,18 @@
-// grid demo
+// game of life
 
 
-let rows = 10;
-let cols = 10;
+let rows = 30;
+let cols = 30;
 let grid;
 let cellSize;
 
 
 function setup() {
-  createCanvas(600, 600);
+  if (windowWidth > windowHeight) {
+    createCanvas(windowHeight, windowHeight);
+  } else {
+    createCanvas(windowWidth, windowWidth);
+  }
   cellSize = width / cols;
   grid = createRandom2dArray(cols, rows);
 }
@@ -16,6 +20,19 @@ function setup() {
 function draw() {
   background(255);
   displayGrid();
+}
+
+function nextTurn() {
+  for (let x = 0; x < grid.length; x++) {
+    for (let y = 0; y < grid[0].length; y++) {
+      let neighbors = 0;
+      for (let i = -1; i <= 1; i++) {
+        for (let j = -1; j <= 1; j++) {
+          neighbors += grid[x + i][y + j];
+        }
+      }
+    }
+  }
 }
 
 function displayGrid() {
@@ -43,7 +60,12 @@ function mousePressed() {
 }
 
 function keyPressed() {
-  grid = createRandom2dArray(cols, rows);
+  if (key === "r" || key === "R") {
+    grid = createRandom2dArray(cols, rows);
+  } else if (key === " ") {
+    nextTurn();
+  }
+
 }
 
 function createRandom2dArray(cols, rows) {
