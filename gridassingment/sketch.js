@@ -1,3 +1,5 @@
+
+let state = 0;
 let rows = 120;
 let cols = 120;
 let grid;
@@ -12,11 +14,51 @@ function setup() {
 function draw() {
   background(255);
   if (state === 0) {
-
+    displayStartInstruction();
   }
   if (state === 1) {
     displayGrid();
   }
+  if (state === 2) {
+    displayLoseScreen();
+  }
+  if (state === 3) {
+    displayWinScreen();
+  }
+}
+
+function displayStartInstruction() {
+  text ("press space to start", width / 2, height / 2);
+}
+
+function displayLoseScreen() {
+  text ("YOU LOST, press R to try again", width / 2, height / 2);
+}
+
+function displayWinScreen() {
+  text ("YOU WON, press R to try again", width / 2, height / 2);
+}
+
+function keyPressed() {
+  if (state === 0) {
+    if (key === " "){
+      state = 1;
+    }
+  }
+
+  if (state === 1) {
+    if (key === "a" || key === "A") {
+
+    }
+    if (key === "d" || key === "D") {
+
+    }
+  }
+
+  if (key === "r" || key === "R") {
+    state = 0;
+  }
+
 }
 
 function displayGrid() {
