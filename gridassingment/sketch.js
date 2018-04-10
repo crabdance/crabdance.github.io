@@ -1,4 +1,5 @@
 
+let safestPath;
 let directionOfTurn;
 let computerIsDead;
 let playerIsDead;
@@ -108,7 +109,11 @@ function createComputerCycle() {
 
 }
 
-function computerCycleReaction() {
+function computerGridScan() {
+
+}
+
+function computerCycleMovement() {
 
 }
 
