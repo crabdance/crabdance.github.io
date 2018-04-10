@@ -1,4 +1,5 @@
 
+let directionOfTurn;
 let computerIsDead;
 let playerIsDead;
 let state = 0;
@@ -18,21 +19,27 @@ function draw() {
   if (state === 0) {
     displayStartInstruction();
   }
+
   if (state === 1) {
     displayGrid();
     computerIsDead = 0
     playerIsDead = 0
+    createPlayerCycle();
+    createComputerCycle();
+
   }
+
   if (state === 2) {
     displayLoseScreen();
   }
+
   if (state === 3) {
     displayWinScreen();
   }
 }
 
 function displayStartInstruction() {
-  text ("press space to start", width / 2, height / 2);
+  text ("press space to start, A turns you left, D turns you right", width / 2, height / 2);
 }
 
 function displayLoseScreen() {
@@ -52,10 +59,10 @@ function keyPressed() {
 
   if (state === 1) {
     if (key === "a" || key === "A") {
-
+      directionOfTurn = 1;
     }
     if (key === "d" || key === "D") {
-
+      directionOfTurn = 2;
     }
   }
 
@@ -90,7 +97,11 @@ function createEmpty2dArray(cols, rows) {
 }
 
 function createPlayerCycle() {
-  
+
+}
+
+function turnDirection() {
+
 }
 
 function createComputerCycle() {
@@ -110,5 +121,9 @@ function computerDeath() {
 }
 
 function playerDeath() {
+
+}
+
+function hideGrid() {
 
 }
