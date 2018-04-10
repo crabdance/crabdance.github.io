@@ -1,4 +1,6 @@
 
+let computerIsDead;
+let playerIsDead;
 let state = 0;
 let rows = 120;
 let cols = 120;
@@ -18,6 +20,8 @@ function draw() {
   }
   if (state === 1) {
     displayGrid();
+    computerIsDead = 0
+    playerIsDead = 0
   }
   if (state === 2) {
     displayLoseScreen();
@@ -83,4 +87,28 @@ function createEmpty2dArray(cols, rows) {
     }
   }
   return randomGrid;
+}
+
+function createPlayerCycle() {
+  
+}
+
+function createComputerCycle() {
+
+}
+
+function computerCycleReaction() {
+
+}
+
+function createCycleWall() {
+
+}
+
+function computerDeath() {
+
+}
+
+function playerDeath() {
+
 }
