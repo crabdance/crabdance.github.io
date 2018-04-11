@@ -17,8 +17,11 @@ function setup() {
   grid = createEmpty2dArray(cols, rows);
 
   state = "start";
+
   playerDirection = "up";
   computerDirection = "down";
+
+  
 }
 
 function draw() {
