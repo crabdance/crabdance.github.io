@@ -1,9 +1,11 @@
 
+let playerDirection;
+let computerDirection;
 let safestPath;
-let directionOfTurn;
+let direction;
 let computerIsDead;
 let playerIsDead;
-let state = 0;
+let state;
 let rows = 120;
 let cols = 120;
 let grid;
@@ -13,15 +15,19 @@ function setup() {
   createCanvas(1000, 750);
   cellSize = width / cols;
   grid = createEmpty2dArray(cols, rows);
+
+  state = "start";
+  playerDirection = "up";
+  computerDirection = "down";
 }
 
 function draw() {
   background(255);
-  if (state === 0) {
+  if (state === "start") {
     displayStartInstruction();
   }
 
-  if (state === 1) {
+  if (state === "game") {
     displayGrid();
     computerIsDead = 0
     playerIsDead = 0
@@ -30,11 +36,11 @@ function draw() {
 
   }
 
-  if (state === 2) {
+  if (state === "lose") {
     displayLoseScreen();
   }
 
-  if (state === 3) {
+  if (state === "win") {
     displayWinScreen();
   }
 }
@@ -52,23 +58,29 @@ function displayWinScreen() {
 }
 
 function keyPressed() {
-  if (state === 0) {
+  if (state === "start") {
     if (key === " "){
-      state = 1;
+      state = "game";
     }
   }
 
-  if (state === 1) {
+  if (state === "game") {
     if (key === "a" || key === "A") {
-      directionOfTurn = 1;
+      direction = "left";
     }
     if (key === "d" || key === "D") {
-      directionOfTurn = 2;
+      direction = "right";
+    }
+    if (key === "w" || key === "W") {
+      direction = "up";
+    }
+    if (key === "s" || key === "S") {
+      direction = "down";
     }
   }
 
   if (key === "r" || key === "R") {
-    state = 0;
+    state = "start";
   }
 
 }
@@ -101,11 +113,19 @@ function createPlayerCycle() {
 
 }
 
+function playerForwardMovement() {
+
+}
+
 function turnDirection() {
 
 }
 
 function createComputerCycle() {
+
+}
+
+function computerForwardMovement() {
 
 }
 
