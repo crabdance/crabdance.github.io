@@ -21,7 +21,7 @@ function setup() {
   playerDirection = "up";
   computerDirection = "down";
 
-  
+
 }
 
 function draw() {
@@ -154,4 +154,8 @@ function playerDeath() {
 
 function hideGrid() {
 
+}
+
+function isPathSafe() {
+  
 }
