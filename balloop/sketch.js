@@ -1,21 +1,24 @@
 // ball OOP
 
 let myBall;
+let anotherBall;
 
 function setup() {
   createCanvas(windowWidth, windowHeight);
   myBall = new Ball();
+  anotherBall = new Ball();
 }
 
 function draw() {
   background(255);
   myBall.display();
+  anotherBall.display();
 }
 
 class Ball {
-  constructor() {
-    this.x = 300;
-    this.y = 400;
+  constructor(x, y) {
+    this.x = x;
+    this.y = y;
     this.radius = 50;
   }
 
