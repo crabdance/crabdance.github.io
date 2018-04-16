@@ -1,4 +1,4 @@
-// ball OOP
+// ball OOP Array
 
 let ballArray = [];
 
