@@ -1,16 +1,19 @@
-// timer oop
+// Bubble ^-^
+// Dan Schellenberg
+// Apr 17, 2018
+
 
 let myTimer;
 
 function setup() {
   createCanvas(windowWidth, windowHeight);
-  myTimer = new Timer(1000);
-
+  myTimer = new Timer(3000);
 }
 
 function draw() {
+  background(255);
   if (myTimer.isDone()) {
-    ellipse(random(width), random(height), random(25, 100), random(25, 100));
+
     myTimer.reset(1000);
   }
 }
@@ -33,14 +36,20 @@ class Timer {
   isDone() {
     if (millis() >= this.finishTime) {
       return true;
-    } else {
+    }
+    else {
       return false;
     }
   }
 }
 
 class Bubble {
-  constructor(riseBubble) {
-    
+  constructor(bubbleRise) {
+    this.x = x;
+    this.y = y;
+    this.up = y - 1;
+    this.makeBubble = ellipse(height, width / 2, 20, 20)
+
+
   }
 }
