@@ -1,3 +1,6 @@
+// currently incomplet
+
+
 
 let playerDirection;
 let computerDirection;
@@ -67,6 +70,7 @@ function keyPressed() {
     }
   }
 
+// movement controls
   if (state === "game") {
     if (key === "a" || key === "A") {
       direction = "left";
@@ -88,6 +92,7 @@ function keyPressed() {
 
 }
 
+// displays the grid
 function displayGrid() {
   for (let x = 0; x < grid.length; x++) {
     for (let y = 0; y < grid[0].length; y++) {
@@ -101,6 +106,7 @@ function displayGrid() {
   }
 }
 
+// creates math for grid
 function createEmpty2dArray(cols, rows) {
   let randomGrid = [];
   for (let x=0; x<cols; x++) {
@@ -157,5 +163,5 @@ function hideGrid() {
 }
 
 function isPathSafe() {
-  
+
 }

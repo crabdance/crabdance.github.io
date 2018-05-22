@@ -3,7 +3,7 @@
 // Apr 17, 2018
 
 
-let myTimer;
+let myBubble;
 
 function setup() {
   createCanvas(windowWidth, windowHeight);
@@ -21,6 +21,12 @@ function draw() {
 class Timer {
   constructor(waitTime) {
     this.waitTime = waitTime;
+    this.startTime = millis();
+    this.finishTime = this.startTime + this.waitTime;
+    this.timerIsDone = false;
+  }
+
+  start () {
     this.startTime = millis();
     this.finishTime = this.startTime + this.waitTime;
     this.timerIsDone = false;
@@ -47,9 +53,21 @@ class Bubble {
   constructor(bubbleRise) {
     this.x = x;
     this.y = y;
-    this.up = y - 1;
-    this.makeBubble = ellipse(height, width / 2, 20, 20)
+    this.radius = radius
+    this.dy = random(-2, -1);
+    this.bubbleTimer = new Timer(1000);
+  }
 
+  display() {
+    if (!this.bubbleTimer.isDone()) {
+      noStroke(0);
 
+    }
+  }
+
+  move () {
+    if (this.y > 0 + this.radius) {
+
+    }
   }
 }
